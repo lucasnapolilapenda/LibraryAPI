@@ -15,20 +15,23 @@ function jsoncall (id, contenedor) {
 
                     title = book.title;
 
-                    book.authors.forEach(function (author) {
-                        auth.push(author.name);
-                    });
+                    if (book.authors) {
+                        book.authors.forEach(function (author) {
+                            auth.push(author.name);
+                        });
+                    }
 
-                    book.publishers.forEach(function (publisher){
-                        publi.push(publisher.name);
-                    });
+                    if (book.publishers) {
+                        book.publishers.forEach(function (publisher){
+                            publi.push(publisher.name);
+                        });
+                    }
+
                     if (book.subjects) {
                         book.subjects.forEach(function (subject) {
                             subje += '<a class = "letra" href="' + subject.url + '"target="_blank">' + subject.name + '</a>&nbsp;';
-
-                        })
+                        });
                     }
-
                     picUrl = book.cover.large;
                     infoUrl = book.url;
 
@@ -58,7 +61,7 @@ function jsoncall (id, contenedor) {
 function searchRequest() {
     var $orders = $('#orders');
     var keyword = $('#searchTab').val();
-
+    $('#orders').empty()
 
     $.ajax({
         type: 'GET',
