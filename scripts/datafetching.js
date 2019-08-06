@@ -4,6 +4,8 @@ function jsoncall (id, contenedor) {
         url: 'https://openlibrary.org/api/books?jscmd=data&format=json&bibkeys=ISBN:'+id,
         dataType: 'json',
         success: function (response) {
+            $('#title').empty()
+            $('#title').append('Reading Books')
             var book = response['ISBN:'+ id];
             if (book){
                     var title;
@@ -32,8 +34,13 @@ function jsoncall (id, contenedor) {
                             subje += '<a class = "letra" href="' + subject.url + '"target="_blank">' + subject.name + '</a>&nbsp;';
                         });
                     }
-                    picUrl = book.cover.large;
-                    infoUrl = book.url;
+                    if (book.cover.large){
+                        picUrl = book.cover.large;
+                    }
+                    if (book.url) {
+                        infoUrl = book.url;
+                    }
+
 
 
              bookformat = $('<div class="mention fadeInUp">\n' +
@@ -52,10 +59,17 @@ function jsoncall (id, contenedor) {
                  '            <p>'+subje+'</p>\n' +
                  '          </div>\n' +
                  '        </div>');
-             contenedor.append(bookformat)
+                contenedor.append(bookformat)
+
             }
+            $('#title').empty()
+            $('#title').append('List of Books')
+
         }
+
     })
+
+
 }
 
 function searchRequest() {
