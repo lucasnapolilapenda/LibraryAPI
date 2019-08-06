@@ -6,7 +6,7 @@
   animation-fill-mode: both;
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
-  animation-delay: 2s;
+
 }
 
 @keyframes fadeIn{
@@ -32,6 +32,7 @@
     opacity: 0;
     -webkit-transform: translate3d(0, -100%, 0);
     transform: translate3d(0, -100%, 0);
+
   }
 
   to {
@@ -64,6 +65,7 @@
   animation-fill-mode: both;
   -webkit-animation-name: fadeInUp;
   animation-name: fadeInUp;
+    animation-delay: 3s;
 }
 
 @-webkit-keyframes fadeInUp {
