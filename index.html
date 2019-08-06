@@ -25,21 +25,20 @@
     <div>
       <div class="product fadeInDown">
         <div class="content">
-          <input class = "input_text" type="text" name="search">
-          <button class="main_btn">Search
+          <input id="searchTab"  class = "input_text" type="text" name="search">
+          <button class="main_btn" onclick="searchRequest()" value="searchTab">Search
           </button>
         </div>
       </div>
     </div>
     <!-- Inicia menciones -->
     <h2  class="mention_title">Books</h2>
-    <div class="mentions fadeInUp" id="orders">
+    <div class="mentions" id="orders">
     </div>
 
 
     <!-- Script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="scripts/script.js"></script>
     <script src="scripts/datafetching.js"></script>
 
 
