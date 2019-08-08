@@ -2,29 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="description" content="Este es un sitio de producto genial">
-    <!-- Aqui podemos poner algún framework -->
+    <meta name="description" content="Book Gallery Super Search">
+
 
     <!-- Aqui podemos poner algún framework -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/mobile.css">
     <link rel="stylesheet" href="css/animations.css">
-    <title>BRAND📦</title>
-
+    <title>BookGallery</title>
   </head> <!-- Cierra head -->
-  <body>
+
+  <banner>
     <div class="main_section fadeIn">
     </div>
-      <div class="title_box">
+    <div class="title_box">
       <div class="text_title">Search for Books</div>
       <div class="text_subtitle">This is my books engine</div>
-      </div>
     </div>
+    </div>
+  </banner>
 
     <div>
-      <div class="product fadeInDown">
-        <div class="content">
+      <div class="search fadeInDown">
+        <div class="searchbox">
           <input id="searchTab"  class = "input_text" type="text" name="search">
           <button class="main_btn" onclick="searchRequest()">Search
           </button>
@@ -32,8 +33,8 @@
       </div>
     </div>
     <!-- Inicia menciones -->
-    <h2 id="title" class="mention_title"></h2>
-    <div class="mentions" id="orders">
+    <h2 id="title" class="book_title"></h2>
+    <div class="books" id="orders">
     </div>
 
 
@@ -43,4 +44,12 @@
 
 
   </body> <!-- Cierra body -->
+
+  <footer class="footer">
+    <div style= "flex-grow: 0; align-content: center">
+      <div>
+        <h3 class="h5footbox">Copyrigth&reg; CCCS310 A4 </h3>
+      </div>
+    </div>
+  </footer>
 </html> <!-- Cierra html -->

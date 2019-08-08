@@ -1,16 +1,14 @@
 
-@media (max-width: 650px) {
+@media (max-width: 960px) {
 
   .main_section{
     padding: 5%;
     height: 300px;
   }
 
-  .beneficios{
-    display: initial;
-  }
-  .mentions{
-    display: initial;
+
+  .books{
+    column-count: 2;
   }
 
   .title_box {
@@ -27,8 +25,46 @@
     font-size: large;
     color: white;
 
+  }
+
+  .selectorbox {
+    width: 100% !important;
+    float: left;
+  }
+
+}
+
+@media (max-width: 760px) {
+
+  .main_section{
+    padding: 5%;
+    height: 300px;
+  }
+
+  .books{
+    display: initial;
+    column-count: 1;
+  }
+
+  .title_box {
+    height: auto;
+    position: absolute; left: 10%; top: 100px;
+  }
+
+  .text_title {
+    font-size: 30px;
+    color: white;
+    alignment: center;
+  }
+  .text_subtitle {
+    font-size: large;
+    color: white;
 
   }
 
+  .selectorbox {
+    width: 100% !important;
+    float: left;
+  }
 
 }

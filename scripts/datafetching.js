@@ -42,9 +42,8 @@ function jsoncall (id, contenedor) {
                     }
 
 
-
-             bookformat = $('<div class="mention fadeInUp">\n' +
-                 '        <div class="content_mention ">\n' +
+             bookformat = $('<div class="book fadeInUp">\n' +
+                 '        <div class="content_book ">\n' +
                  '          <a href="'+ infoUrl +'" target="_blank"><img src="'+ picUrl + '" alt="" ></a>\n' +
                  '          </div>\n' +
                  '          <div class="text">\n' +
@@ -89,11 +88,8 @@ function searchRequest() {
                         jsoncall(sIsbn, $orders);
 
                     })
-
                   }
-
             })
-
     }
 
 
