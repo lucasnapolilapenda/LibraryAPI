@@ -82,15 +82,26 @@ function searchRequest() {
         dataType: 'xml',
         success: function (orders) {
             var sIsbn;
-                $(orders).find('work').each(function () {
-                    sIsbn =  $(this).find('titles>:first-child').text();
-                        console.log(sIsbn);
-                        jsoncall(sIsbn, $orders);
-
+                if($(orders).find(':first-child').text) {
+                    console.log($(orders).find(':first-child').text);
+                    $(orders).find('work').each(function () {
+                        sIsbn = $(this).find('titles>:first-child').text();
+                        if (sIsbn.valueOf()) {
+                            console.log(sIsbn);
+                            jsoncall(sIsbn, $orders);
+                        }
                     })
-                  }
-            })
-    }
+
+                }
+                if (!sIsbn) {
+                    alert('No book Found')
+                }
+
+        }
+    })
+
+
+}
 
 
 
