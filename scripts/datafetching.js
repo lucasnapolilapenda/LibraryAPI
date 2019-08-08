@@ -4,8 +4,6 @@ function jsoncall (id, contenedor) {
         url: 'https://openlibrary.org/api/books?jscmd=data&format=json&bibkeys=ISBN:'+id,
         dataType: 'json',
         success: function (response) {
-            $('#title').empty()
-            $('#title').append('Reading Books')
             var book = response['ISBN:'+ id];
             if (book){
                     var title;
@@ -47,13 +45,10 @@ function jsoncall (id, contenedor) {
                  '          <a href="'+ infoUrl +'" target="_blank"><img src="'+ picUrl + '" alt="" ></a>\n' +
                  '          </div>\n' +
                  '          <div class="text">\n' +
-                 '            <h3>' + title +  '</h3>\n' +
+                 '            <h2>' + title +  '</h2> <h5 style="font-weight: normal"><span style="font-weight: bold">Author:&nbsp;</span>' + auth +  '</h5>\n' +
                  '          </div>\n' +
                  '          <div class="text">\n' +
-                 '            <h4>Author:&nbsp;' + auth +  '</h4>\n' +
-                 '          </div>\n' +
-                 '          <div class="text">\n' +
-                 '            <h4>Publisher:&nbsp;' + publi +  '</h4>\n' +
+                 '            </h2> <h5 style="font-weight: normal"><span style="font-weight: bold">Publisher:&nbsp;</span>' + publi +  '</h5>\n' +
                  '          </div>\n' +
                  '            <p>'+subje+'</p>\n' +
                  '          </div>\n' +
@@ -61,13 +56,12 @@ function jsoncall (id, contenedor) {
                 contenedor.append(bookformat)
 
             }
-            $('#title').empty()
-            $('#title').append('List of Books')
+
 
         }
 
-    })
 
+    })
 
 }
 
@@ -75,6 +69,7 @@ function searchRequest() {
     var $orders = $('#orders');
     var keyword = $('#searchTab').val();
     $('#orders').empty()
+    $('#title').empty()
 
     $.ajax({
         type: 'GET',
@@ -91,10 +86,12 @@ function searchRequest() {
                             jsoncall(sIsbn, $orders);
                         }
                     })
-
+                    $('#title').append('    <h2 class="book_title fadeInUp">List of Books</h2>')
                 }
+
                 if (!sIsbn) {
                     alert('No book Found')
+                    $('#title').empty()
                 }
 
         }

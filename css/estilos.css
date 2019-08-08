@@ -167,7 +167,7 @@ h2.book_title{
   break-inside: avoid; /* IE 10+ */
 }
 .book .text{
-  padding: var(--space);
+  padding: 4px;
   width: 100%;
   -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
   page-break-inside: avoid; /* Firefox */
