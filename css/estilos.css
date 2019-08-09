@@ -154,11 +154,12 @@ h2.book_title{
   padding: 7px;
   width: 100%;
   margin-bottom: 10px;
-  background-color: aliceblue;
   -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
   page-break-inside: avoid; /* Firefox */
   break-inside: avoid; /* IE 10+ */
-  box-shadow: 0px 0 2px 1px #e6e5e9;
+  background: var(--white-color);
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px 2px #7f7e82;
 }
 .content_book{
   width: 100%;
@@ -179,12 +180,14 @@ h2.book_title{
   font-size: 11px;
   font-style: italic;
   color: #141de7;
+    -webkit-transition: font-size 2s; /* For Safari 3.1 to 6.0 */
+    transition: font-size 2s;
 }
 
 .letra:hover {
   font-family: 'Open Sans', sans-serif;
   font-size: 13px;
-  color: #141de7;
+  color: #e73e9d;
   font-style: italic;
 }
 
