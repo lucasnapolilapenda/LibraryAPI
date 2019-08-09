@@ -29,7 +29,7 @@ function jsoncall (id, contenedor) {
 
                     if (book.subjects) {
                         book.subjects.forEach(function (subject) {
-                            subje += '<a class = "letra" href="' + subject.url + '"target="_blank">' + subject.name + '</a>&nbsp;';
+                            subje += '<a class = "letra" style="text-decoration: none" href="' + subject.url + '"target="_blank">' + subject.name + '</a>&nbsp;';
                         });
                     }
                     if (book.cover.large){
@@ -50,7 +50,7 @@ function jsoncall (id, contenedor) {
                  '          <div class="text">\n' +
                  '            </h2> <h5 style="font-weight: normal"><span style="font-weight: bold">Publisher:&nbsp;</span>' + publi +  '</h5>\n' +
                  '          </div>\n' +
-                 '            <p>'+subje+'</p>\n' +
+                 '            <p><span style="font-weight: bold; font-size: 13px">Subjects:&nbsp;</span>'+subje+'</p>\n' +
                  '          </div>\n' +
                  '        </div>');
                 contenedor.append(bookformat)
